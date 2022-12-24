@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <h3>Count Characters</h3>
+    <pre>
+
+const countCharacters = (S) => 
+{
+  var A=0;
+  var D=0;
+  var B=[];
+  var count=[];
+  count.push(...S);
+
+ for(i=0;i< count.length;i++){
+   if(count[i]= =  "A"){
+     A++;
+   }
+    if(count[i] = =  "D"){
+     D++;
+   }
+ }
+
+  B.push(A,D);
+
+ return (B);
+
+}
+
+    </pre>
+
+
+    <h3>Count the Vowels</h3>
+    <pre>
+     
+var Count_Vowels= (S) => 
+{
+  var vowel="aeiouAEIOU";
+  var count=0;
+  var arr=[];
+  arr.push(...S);
+  for(i=0;i< arr.length;i++){
+    for(j=0;j< vowel.length;j++){
+      if(arr[i]==vowel[j]){
+        count++;
+      }
+    }
+  }
+  return count;
+};
+ 
+   
+    </pre>
+    <h3>Concatenate the Strings</h3>
+    <pre>
+       
+var Concatenate_Strings = (S1, S2) => 
+{
+
+      return S1.concat(S2);
+
+};
+ 
+ 
+    </pre>
+    <h3>Find Length</h3>
+    <pre>
+        
+const findLength = (S) => 
+{
+    return (S.length)
+};
+ 
+
+    </pre>
+    <h3>Find the Winner</h3>
+    <pre>
+         
+var Game_Winner = (S) => 
+{
+  var countA=0;
+  var countD=0;
+  let arr=[]
+  arr.push(...S)
+  for(i=0;i< arr.length;i++){
+   
+    if(arr[i]=="A") {
+      countA++
+    }
+    else{
+      countD++
+    }
+   
+  }
+  if(countA>countD){
+    return "Aditya"
+  }
+  else if(countA< countD)
+{
+  return " Danish "
+}
+else{
+  return " Draw "
+}
+ 
+}
+
+     </pre>
+
+    <h3>
+        Join Strings
+    </h3>
+    <pre>
+        const joinStrings = (S, P) => 
+{
+ var arr=[]
+ arr.push(S,P);
+
+ var string="";
+ string=arr.join("");
+
+ return string;
+};
+    </pre>
+    <h3>Plaindrome Check</h3>
+    <pre>
+      var Palin_Check = (str) =>
+      {
+      var msg="True";
+      for(i=0;i< str.length/2;i++){
+        if(str[i] != str[str.length-1-i]){
+          msg="False";
+        }
+      }return msg;
+      };
+
+    </pre>
+    <h3>Reverse the String</h3>
+    <pre>
+        
+var Reverse_String = (str) => 
+{
+
+  var str2=[]
+  str2.push(...str);
+   str2.reverse(); 
+  return (str2.join(""))
+
+
+};
+ 
+
+    </pre>
+    <h3>Match the Strings</h3>
+    <pre>
+       
+var String_Match = (S1,S2) => 
+{
+  var count=0;
+  s3=[];
+  s4=[];
+  s3.push(...S1);
+  s4.push(...S2);
+  for(i=0;i< S1.length;i++){
+    if(s3[i]==s4[i]){
+      count++
+    }
+    
+    
+  }
+  if(count==S1.length){
+    return "YES"
+  }
+  else{
+    return "NO"
+  }
+  
+};
+ 
+ 
+    </pre>
+
+    <h3>Split the String</h3>
+    <pre>
+      
+var Split_the_string = (S) => 
+{
+
+  return (S.split(" "))
+};
+ 
+  
+    </pre>
+
+    <h3>Count the Vowels and Consonants</h3>
+    <pre>
+        
+var Count_Vowels= (S) => 
+{
+     var vowel=["a","i","e","o","u","A","I","E","O","U"];
+  var count=0;
+  var arr=[]
+  arr.push(...S);
+  for(i=0;i< arr.length;i++){
+    for(j=0;j< vowel.length;j++){
+      if(arr[i]==vowel[j]){
+        count++;
+      }
+    }
+  }
+  return count; 
+};
+var Count_Consonants= (S) => 
+{
+   var vowel=["a","i","e","o","u","A","I","E","O","U"];
+  var count=0;
+  var consonant=0;
+  var arr=[];
+  arr.push(...S);
+  for(i=0;i< arr.length;i++){
+    for(j=0;j< vowel.length;j++){
+      if(arr[i]==vowel[j]){
+        count++;
+      }
+    }
+    
+  }
+consonant=arr.length-count;
+  return consonant;    
+};
+  </pre>
+  <h3>Count the Heads</h3>
+  <pre>
+    
+var Count_Occ = (s) => 
+{
+   let arr2=[];
+  let arr=[];
+  for(let i=0;i< s.length;i++){
+    arr.push(s[i]);
+  }
+  arr.sort();
+  
+  let map=new Map();
+  for(let i=0;i<  arr.length;i++){
+    if(map.has(arr[i])){
+      let value=map.get(arr[i]);
+      map.set(arr[i],value+1);
+    }
+    else{
+      map.set(arr[i],1);
+    }
+  }
+  for(let [k,v] of map){
+    if(v>1){
+    arr2.push(k,v);
+    }
+  }
+  var S="";
+for(let i=0; i< arr2.length;i++){
+ 
+  S=S+arr2[i];
+}
+  return (S);
+
+};
+ 
+
+  </pre>
+    
+
+
+    <script src="index.js"></script>
+</body>
+</html>
